@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { BusinessAllowType } from "@/api/login";
 import messageRing from "@/assets/audio/newMsg.mp3";
 import { API_URL, WS_URL } from "@/config";
-import * as dotenv from 'dotenv'
-dotenv.config()
+// import * as dotenv from 'dotenv'
+// dotenv.config()
 
 import {
   ExMessageItem,
@@ -109,8 +109,8 @@ export function useGlobalEvent() {
           userID: IMUserID,
           token: IMToken,
           platformID: window.electronAPI?.getPlatform() ?? 5,
-          apiAddr: process.env.API_URL || API_URL,
-          wsAddr: process.env.WS_URL || WS_URL,
+          apiAddr:API_URL,
+          wsAddr: WS_URL,
         });
         initStore();
       } catch (error) {
