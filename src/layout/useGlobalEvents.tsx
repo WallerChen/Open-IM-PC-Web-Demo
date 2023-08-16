@@ -108,8 +108,8 @@ export function useGlobalEvent() {
           userID: IMUserID,
           token: IMToken,
           platformID: window.electronAPI?.getPlatform() ?? 5,
-          apiAddr: process.env.API_URL || "",
-          wsAddr: process.env.WS_URL || "",
+          apiAddr: process.env.API_URL || API_URL,
+          wsAddr: process.env.WS_URL || WS_URL,
         });
         initStore();
       } catch (error) {

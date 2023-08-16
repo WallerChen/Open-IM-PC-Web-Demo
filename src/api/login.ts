@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "react-query";
 import { v4 as uuidv4 } from "uuid";
 
-// import { USER_URL } from "@/config";
+import { USER_URL } from "@/config";
 import { AppConfig } from "@/store/type";
 import { MessageReceiveOptType } from "@/utils/open-im-sdk-wasm/types/enum";
 import createAxiosInstance from "@/utils/request";
@@ -9,7 +9,7 @@ import { getChatToken } from "@/utils/storage";
 
 import { errorHandle } from "./errorHandle";
 
-const request = createAxiosInstance(process.env.USER_URL || "");
+const request = createAxiosInstance(process.env.USER_URL || USER_URL);
 
 const platform = window.electronAPI?.getPlatform() ?? 5;
 
