@@ -6,6 +6,8 @@ import { AppConfig } from "@/store/type";
 import { MessageReceiveOptType } from "@/utils/open-im-sdk-wasm/types/enum";
 import createAxiosInstance from "@/utils/request";
 import { getChatToken } from "@/utils/storage";
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 import { errorHandle } from "./errorHandle";
 

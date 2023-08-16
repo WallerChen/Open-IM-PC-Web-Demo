@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { BusinessAllowType } from "@/api/login";
 import messageRing from "@/assets/audio/newMsg.mp3";
 import { API_URL, WS_URL } from "@/config";
-
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 import {
   ExMessageItem,
