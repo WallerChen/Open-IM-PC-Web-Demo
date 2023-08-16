@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "tsc && vite build && electron-builder",
     "preview": "vite preview --host",
     "pree2e": "vite build --mode=test",
     "e2e": "playwright test",
@@ -61,8 +61,13 @@
     "node": "^14.18.0 || >=16.0.0"
   },
   "lint-staged": {
-    "src/**/*.{tsx,ts}": ["prettier --write", "eslint --fix"],
-    "*.{json,html,css,scss,xml,md}": ["prettier --write"]
+    "src/**/*.{tsx,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,html,css,scss,xml,md}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
@@ -73,11 +78,14 @@
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.7",
+    "electron-log": "^4.4.8",
+    "electron-store": "^8.1.0",
     "i18next": "^22.5.0",
     "i18next-browser-languagedetector": "^7.0.2",
     "localforage": "^1.10.0",
     "md5": "^2.3.0",
     "mitt": "^3.0.0",
+    "open-im-sdk-wasm": "^3.1.0",
     "react-draggable": "^4.4.5",
     "react-i18next": "^12.3.1",
     "react-query": "^3.39.3",

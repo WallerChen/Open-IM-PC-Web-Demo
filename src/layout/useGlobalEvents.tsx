@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { BusinessAllowType } from "@/api/login";
 import messageRing from "@/assets/audio/newMsg.mp3";
 import { API_URL, WS_URL } from "@/config";
+
+
 import {
   ExMessageItem,
   useConversationStore,
@@ -106,8 +108,8 @@ export function useGlobalEvent() {
           userID: IMUserID,
           token: IMToken,
           platformID: window.electronAPI?.getPlatform() ?? 5,
-          apiAddr: API_URL,
-          wsAddr: WS_URL,
+          apiAddr: process.env.API_URL || "",
+          wsAddr: process.env.WS_URL || "",
         });
         initStore();
       } catch (error) {
